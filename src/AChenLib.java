@@ -55,8 +55,8 @@ public class AChenLib {
     }
     public static void isPalindrome(String word) {
         String reverse = "";
-        for (int i = word.length()-1; i <= 0; i--) {
-            reverse += word.substring(i,i+1);
+        for (int i = word.length() - 1; i <= 0; i--) {
+            reverse += word.substring(i, i + 1);
         }
         System.out.println(reverse);
         if (reverse.equals(word)) {
@@ -64,14 +64,18 @@ public class AChenLib {
         } else {
             System.out.println("False: the inputted word is not a Palindrome");
         }
+    }
     public static void dataStr(String date)
     {
        int slashIndex = date.indexOf("/");
-        String day=date.substring(slashIndex+1, slashIndex+3);
+        String day= date.substring(slashIndex+1, slashIndex+3);
         String month= date.substring(0,2);
         String year= date.substring(date.length()-4, date.length());
         System.out.println (day + " - "+ month +" - " + year);
     }
-        
+    public static void vigCipher(String Message, String Key){
+        if (Message.length() != Key.length()){
+            
+        }
     }
 }
