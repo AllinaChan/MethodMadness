@@ -64,6 +64,14 @@ public class AChenLib {
         } else {
             System.out.println("False: the inputted word is not a Palindrome");
         }
-
+    public static void dataStr(String date)
+    {
+       int slashIndex = date.indexOf("/");
+        String day=date.substring(slashIndex+1, slashIndex+3);
+        String month= date.substring(0,2);
+        String year= date.substring(date.length()-4, date.length());
+        System.out.println (day + " - "+ month +" - " + year);
+    }
+        
     }
 }
