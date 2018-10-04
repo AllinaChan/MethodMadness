@@ -73,9 +73,22 @@ public class AChenLib {
         String year= date.substring(date.length()-4, date.length());
         System.out.println (day + " - "+ month +" - " + year);
     }
-    public static void vigCipher(String Message, String Key){
-        if (Message.length() != Key.length()){
-            
+    public static void vigCipher(String message, String key)
+    {
+        String addKey="";
+        if (message.length() != key.length()){
+            int stringDiff= message.length()-key.length();
+            if (stringDiff >0)
+            {
+               if(key.length()>stringDiff){
+                   addKey= key+ key.substring(0, stringDiff);
+               }
+               if(key.length()<stringDiff){
+                   //make it keep adding the letters untill it equals
+                   
+               }
+            }
+            //if(stringDiff<0)
         }
     }
 }
