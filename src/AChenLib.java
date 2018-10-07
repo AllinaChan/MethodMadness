@@ -1,4 +1,5 @@
 public class AChenLib {
+    //Allen Chen Period 9
     /**
      *
      * @param a- The a value of a standard quadratic equation
@@ -86,22 +87,38 @@ public class AChenLib {
             System.out.println("False: the inputted word is not a Palindrome");
         }
     }
-    public static void vigCipher(String message, String key)
-    {
-        String addKey="";
-        if (message.length() != key.length()){
-            int stringDiff= message.length()-key.length();
-            if (stringDiff >0)
-            {
-               if(key.length()>stringDiff){
-                   addKey= key+ key.substring(0, stringDiff);
-               }
-               if(key.length()<stringDiff){
-                   //make it keep adding the letters untill it equals
-                   
-               }
+    public static void vigCipher(String message, String key) {
+
+        String addKey = "";
+        String encryptedMessage = "";
+        message = message.toUpperCase();
+        key = key.toUpperCase();
+        int stringDiff = message.length() - key.length();
+        //the 2 if statements are for mapping the key to be the same length as the message
+        if (message.length() != key.length()) {
+            if (stringDiff > 0) {
+                //keeps adding letters until the length of the key is equal to the length of the message
+                for (int i = 0; addKey.length() < message.length(); i++) {
+                    if (i > key.length() - 1) {
+                        i = 0;
+                    }
+                    addKey = addKey + key.substring(i, i + 1);
+                }
             }
-            //if(stringDiff<0)
+            if (stringDiff < 0) {
+                addKey = key.substring(0, message.length());
+            }
         }
+        //if message.length() = key.length() the addKey string will just be key, a little problem that took me forever to figure out
+        addKey=key;
+        System.out.println(addKey);
+        System.out.println( message.charAt(1));
+        for (int i=0;  i< message.length(); i++)
+        {
+            //After testing to know the number associated with each letter of the CAPITALIZE alphabet, I found out that JAVA uses ASCII
+            int encryptedLetter=((message.charAt(i)-65)+(addKey.charAt(i)-65)% 26 ); //I subtracted 65 to make the alphabet go from 0-26
+            encryptedMessage+=(char)((encryptedLetter));
+        }
+        System.out.println("The encrypted message is: "+ encryptedMessage);
     }
 }
