@@ -85,10 +85,10 @@ public class AChenLib {
            }
            if(isPrime == true)
            {
-               primeCount+=1;
+               primeCount+=1; //add to the prime count so we are one step closer to completing the firsst "num" prime numbers
                primeNumbers= primeNumbers + possiblePrime+ " ";
            }
-           possiblePrime++;
+           possiblePrime++; //Next prime number to check please!
         }
             System.out.println("The first " +num+ " prime numbers are: "+primeNumbers);
 
